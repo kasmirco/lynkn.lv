@@ -367,7 +367,7 @@ body {
   min-height: 80vh;
   padding: 50px 10%;
   gap: 50px;
-    background-color: #08464bab; /* dark brown aesthetic background */
+    background-color: #000000ab; /* dark brown aesthetic background */
 
 }
 
@@ -688,3 +688,4 @@ section.show {
   opacity: 1;
   transform: translateY(0);
 }
+
