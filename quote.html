@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Quote | Lyn & Ken</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Calibri", sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #f9c5d1;
+    }
+
+    .nav-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    /* Quote Section */
+    .quote-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+
+    /* Smoke background */
+    .smoke-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: url("https://i.ibb.co/8KQF6dz/smoke.png") repeat;
+      background-size: cover;
+      opacity: 0.3;
+      filter: blur(60px);
+      animation: moveSmoke 70s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes moveSmoke {
+      0% { transform: translate(-10%, -10%) scale(1); }
+      50% { transform: translate(10%, 10%) scale(1.1); }
+      100% { transform: translate(-10%, -10%) scale(1); }
+    }
+
+    /* Form Container */
+    .quote-container {
+      position: relative;
+      z-index: 5;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 50px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      color: #fff;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+
+    .quote-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .quote-container p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #f0f0f0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #ffd1dc;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 1rem;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #ddd;
+    }
+
+    .btn-submit {
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: #f9c5d1;
+      border: none;
+      border-radius: 30px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.8);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 25px;
+      }
+
+      .nav-logo {
+        width: 60px;
+        height: 60px;
+      }
+
+      .quote-container {
+        padding: 30px 20px;
+      }
+
+      .quote-container h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <a href="index.html"><img src="Gemini_Generated_Image_20d9oj20d9oj20d9.png" alt="LK Logo" class="nav-logo"></a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#lyn">Lyn</a></li>
+        <li><a href="index.html#ken">Ken</a></li>
+        <li><span class="slash">|</span></li>
+        <li><a href="quote.html" class="active">Get Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="quote-section">
+    <!-- Smoke background -->
+    <div class="smoke-bg"></div>
+
+    <div class="quote-container">
+      <h1>Request a Quote</h1>
+      <p>We’d love to capture your special moments. Fill out the form below, and we’ll get back to you soon.</p>
+
+      <form action="#" method="POST" class="quote-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Type</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="wedding">Wedding Photography</option>
+            <option value="portrait">Portrait Session</option>
+            <option value="event">Event Coverage</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Describe your request..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 lynkn.lv | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
